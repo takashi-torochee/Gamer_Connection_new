@@ -1,0 +1,23 @@
+<h1>投稿編集</h1>
+
+<%= form_with model: @post, url: users_posts_edit_path(@post.id) do |f| %>
+
+<%= f.label "タイトル" %>
+<%= f.text_field :title %><br>
+
+<%= f.label "文章" %>
+<%= f.text_area :introduction %><br>
+
+<%= f.label "ゲームタイトル" %>
+<%= f.text_field :game_name %><br>
+
+<%= f.label "いろんなID" %>
+<%= f.text_field :various_id %>
+
+<%= f.hidden_field :user_id, value: current_user.id %>
+
+<%= f.submit "編集完了" %>
+
+<% end %>
+
+<%= link_to "削除", destroy_posts_path(@post.id), method: :delete %>
