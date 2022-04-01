@@ -3,10 +3,14 @@ Rails.application.routes.draw do
     get 'relationships/follows' => 'public/relationships#follows'
     get 'relationships/followers' => 'public/relationships#followers'
 
-
-    get 'users' => 'public/users#show'
-    get 'users/edit' => 'public/users#edit'
-    get 'users/withdraw_confirm' => 'public/users#withdraw_confirm'
+    get 'users/:id' => 'public/users#show', as: "users_show"
+    get 'users/:id/edit' => 'public/users#edit', as: "users_edit"
+    get 'users/:id/withdraw_confirm' => 'public/users#withdraw_confirm', as: "users_withdraw"
+    
+    get 'users/:id/follows' => 'public/users#follows', as: "follows"
+    get 'users/:id/followers' => 'public/users#followers', as: "followers"
+    delete 'users/:user_id/relationships' => 'public/relationships#destroy', as: "relationships"
+    post 'users/:user_id/relationships' => 'public/relationships#create'
 
     get 'users/posts' => 'public/posts#new'
     post 'users/posts' => 'public/posts#create'
