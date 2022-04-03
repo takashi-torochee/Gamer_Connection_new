@@ -7,9 +7,9 @@
       <%= t.game_name %><br>
       <%= t.various_id %><br>
 
-      <% if t.user_id == current_user.id %>
+      
         <%= link_to "編集", users_posts_edit_path(t.id) %>
-      <% end %>
+
     </div>
   <% end %>
 
@@ -17,6 +17,6 @@
 
 <li class="nav-item">
   <%= link_to destroy_user_session_path, method: :delete do %>
-    <font color=black>ログアウト</font>
+    <font>ログアウト</font>
   <% end %>
 </li>

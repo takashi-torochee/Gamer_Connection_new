@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
 
+  devise_for :admin, skip: [:registrations, :passwords], controllers: {
+    sessions: "admin/sessions"
+  }
+
+
+  devise_for :users, skip: [:passwords], controllers: {
+    registrations: "public/registrations",
+    sessions: 'public/sessions'
+  }
+
     get 'relationships/follows' => 'public/relationships#follows'
     get 'relationships/followers' => 'public/relationships#followers'
 
     get 'users/:id' => 'public/users#show', as: "users_show"
     get 'users/:id/edit' => 'public/users#edit', as: "users_edit"
+    patch 'users/:id/edit' => 'public/users#update'
     get 'users/:id/withdraw_confirm' => 'public/users#withdraw_confirm', as: "users_withdraw"
     
     get 'users/:id/follows' => 'public/users#follows', as: "follows"
@@ -26,21 +37,11 @@ Rails.application.routes.draw do
     root to: 'public/homes#top'
 
   namespace :admin do
-    resources :users, only: [:show, :edit]
+    resources :users, only: [:show, :edit, :update]
   end
   namespace :admin do
-    get 'homes'
+    get 'homes' => 'homes#top'
   end
 
-
-  devise_for :admin, skip: [:registrations, :passwords], controllers: {
-  sessions: "admin/sessions"
-}
-
-
-  devise_for :users, skip: [:passwords], controllers: {
-  registrations: "public/registrations",
-  sessions: 'public/sessions'
-}
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

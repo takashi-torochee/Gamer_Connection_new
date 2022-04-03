@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
 
          has_one_attached :image
 
@@ -14,11 +15,12 @@ class User < ApplicationRecord
         
         has_many :follow_user, through: :follower, source: :follow # 自分がフォローしている人
         has_many :follower_user, through: :follow, source: :follower # 自分をフォローしている人
+        
+ 
 
 
         def follow(user_id)
-          binding.pry
-          follower.create(follow_id: user_id)
+          follower.create!(follow_id: user_id)
         end
       
         # ユーザーのフォローを外す

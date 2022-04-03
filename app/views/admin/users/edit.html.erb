@@ -1,2 +1,20 @@
 <h1>管理者側会員情報編集画面</h1>
 
+<%= form_with model: @user, url: admin_user_path, method: :patch do |f| %>
+
+  <%= @user.name %>
+  <%= @user.age %>
+  <%= @user.email %>
+  <%= @user.game_title %>
+
+  <div class="field">
+    <%= f.radio_button :is_active, "true" %>
+    <%= f.label :is_active, "会員" %>
+    <%= f.radio_button :is_active, "false" %>
+    <%= f.label :is_active, "退会" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する" %>
+  </div>
+<% end %>
