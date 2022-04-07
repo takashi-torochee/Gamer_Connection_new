@@ -13,3 +13,109 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+    height:480px;
+}
+.page_title{
+    margin-left:180px;
+}
+
+.left-side-bar{
+    width:15%;
+    height:480px;
+    float:left;
+    text-align: left;
+    background-color: green;
+}
+
+.right-side-bar{
+    width:15%;
+    height:480px;
+    float:right;
+    text-align: center;
+    background-color: green;
+}
+
+
+/*メンバー新規登録ページ*/
+#new_form_group{
+    margin-left:350px;
+}
+
+.new_image{
+    float: left;
+    clear:both;
+    height:190px;
+    margin-top:10px;
+    margin-right:80px;
+}
+
+.new_params{
+    margin:10px 20px;
+}
+
+/*メンバーログインページ*/
+.login_form{
+    margin:20px 0;
+    text-align:center;
+}
+
+/*新規投稿ページ*/
+.new_post_back{
+    width:39%;
+    height:350px;
+    background-color: gray;
+    margin:0 auto;
+    border-radius: 20px;
+}
+
+.new_post_form{
+    font-size:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+    text-align: center;
+}
+
+.post_danger{
+    font-size:14px;
+    color: red;
+    text-align: center;
+}
+
+/*投稿編集ページ*/
+.edit_post_back{
+    width:39%;
+    height:320px;
+    background-color: gray;
+    margin:0 auto;
+    border-radius: 20px;
+}
+
+/*投稿詳細ページ*/
+.post_show{
+    width:35%;
+    height:100px;
+    border: 2px solid
+}
+
+/*マイページ*/
+.mypage{
+    height:500px;
+    float:left;
+    margin-left:150px;
+}
+
+.post_all{
+    width:400px;
+    margin-top:10px;
+    margin-left:100px;
+    float:left;
+}
+
+
+/*投稿に関して*/
+.post_game_name{
+    margin-top:0;
+    float:right;
+}

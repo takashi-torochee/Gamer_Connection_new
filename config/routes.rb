@@ -12,6 +12,13 @@ Rails.application.routes.draw do
 
     get 'relationships/follows' => 'public/relationships#follows'
     get 'relationships/followers' => 'public/relationships#followers'
+    
+    get 'users/posts' => 'public/posts#new'
+    post 'users/posts' => 'public/posts#create'
+    get 'users/posts/edit/:id' => 'public/posts#edit', as: "users_posts_edit"
+    patch 'users/posts/edit/:id' => 'public/posts#update'
+    get 'users/posts/:id' => 'public/posts#show', as: "users_posts_show"
+    delete 'users/posts/:id' => 'public/posts#destroy', as: "destroy_posts"
 
     get 'users/:id' => 'public/users#show', as: "users_show"
     get 'users/:id/edit' => 'public/users#edit', as: "users_edit"
@@ -23,12 +30,7 @@ Rails.application.routes.draw do
     delete 'users/:user_id/relationships' => 'public/relationships#destroy', as: "relationships"
     post 'users/:user_id/relationships' => 'public/relationships#create'
 
-    get 'users/posts' => 'public/posts#new'
-    post 'users/posts' => 'public/posts#create'
-    get 'users/posts/edit/:id' => 'public/posts#edit', as: "users_posts_edit"
-    patch 'users/posts/edit/:id' => 'public/posts#update'
-    get 'users/posts/:id' => 'public/posts#show', as: "users_posts_show"
-    delete 'users/posts/:id' => 'public/posts#destroy', as: "destroy_posts"
+   
 
     post 'users/posts/:id/comments' => 'public/comments#create', as: "posts_comments"
 

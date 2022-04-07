@@ -1,20 +1,19 @@
-<h2>Log in</h2>
+<h2 class="page_title">メンバーログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label "メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="login_form">
+    <%= f.label "メールアドレス" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", style: "width:25%; margin-left:40px;" %>
   </div>
 
-  <div class="field">
-    <%= f.label "パスワード" %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="login_form">
+    <%= f.label "パスワード" %>
+    <%= f.password_field :password, autocomplete: "current-password", style: "width:25%; margin-left:70px;" %>
   </div>
 
 
-  <div class="actions">
+  <div style="text-align:center; margin-top:40px;">
     <%= f.submit "ログイン" %>
   </div>
 <% end %>
 
-<%= render "public/shared/links" %>

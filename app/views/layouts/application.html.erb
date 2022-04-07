@@ -11,17 +11,6 @@
   </head>
 
   <body>
-    <%= form_with url: root_path, method: :get do %>
-      <%= text_field_tag :search %>
-      <%= submit_tag 'Search', name: nil %>
-  <% end %>
-
-
-  <% rank_num = 1 %>
-  <% Post.find(Post.group(:game_name).order('count(game_name) desc').limit(5).pluck(:id)).each.with_index(1) do |post, i| %>
-    <p>第<%= rank_num %>位<%= post.game_name %></p>
-    <% rank_num += 1 %>
-  <% end %>
 
     <%= yield %>
   </body>

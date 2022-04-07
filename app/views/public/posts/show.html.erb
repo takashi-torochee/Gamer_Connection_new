@@ -1,10 +1,13 @@
-<h1>投稿詳細</h1>
+<h1 style="margin-left:300px;">投稿詳細</h1>
 
- <div style="margin:20px">
-   <h5>タイトル</h5>
-   <%= @post.title %><br>
-   <h5>本文</h5>
-   <%= @post.introduction %><br>
+ <div class="post_show" style="margin:20px">
+    <%= image_tag @post.user.profile, size: "70x70", style: "float:left;" %>
+     
+      <div style="float:left">
+        <%= @post.title %><br>
+        <%= @post.introduction %>
+      </div>
+     
    <%= @post.game_name %><br>
    <%= @post.various_id %>
  </div>
@@ -13,6 +16,7 @@
      <p>コメント件数：<%= @post.comments.count %></p>
         <% @post.comments.each do |comment| %>
           <div>
+              <%= image_tag comment.user.profile, size: "70x70" %>
             <%= comment.user.name %>
             <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment_introduction %>
           </div>

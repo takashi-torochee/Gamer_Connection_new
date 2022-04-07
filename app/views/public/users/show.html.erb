@@ -1,18 +1,82 @@
-<h1>マイページ</h1>
 
-    <% if current_user != @user %>
-       <% if current_user.follow?(@user) %>
-         <%= link_to 'フォロー外す', relationships_path(@user.id), method: :delete %>
-       <% else %>
-         <%= link_to 'フォローする', relationships_path(@user.id), method: :post %>
-       <% end %>
-    <% end %>
+
+<div class="left-side-bar">
+      <% rank_num = 1 %>
+      <% Post.find(Post.group(:game_name).order('count(game_name) desc').limit(5).pluck(:id)).each.with_index(1) do |post, i| %>
+        <p>第<%= rank_num %>位<%= post.game_name %></p>
+        <% rank_num += 1 %>
+      <% end %>
+</div>
+
+
+  <h1 style="margin:0 300px; width:180px;">マイページ</h1>
+
+  <div class="mypage">
+    <%= image_tag @user.profile, size: "150x150", style:"border:1px solid; margin-top:20px;" %><br>
+    ニックネーム:<%= @user.name %><br>
    
-   
+    <div style="margin:10px 0">
     <%= link_to follows_path(@user) do %>
-      <h6>フォロー<%= @follow_users.count %></h6>
-    <% end %>
-     
+      フォロー<%= @follow_users.count %>
+    <% end %>&nbsp;&nbsp;
     <%= link_to followers_path(@user) do %>
-     <h6>フォロワー<%= @follower_users.count %></h6>
+     フォロワー<%= @follower_users.count %>
     <% end %>
+    </div>
+    
+    <% if @user == current_user %>
+      <%= link_to 'プロフィール編集', users_edit_path(@user.id) %>
+     
+    <% else %>
+    
+      <% if current_user != @user %>
+        <% if current_user.follow?(@user) %>
+          <%= link_to 'フォロー外す', relationships_path(@user.id), method: :delete %>
+        <% else %>
+          <%= link_to 'フォローする', relationships_path(@user.id), method: :post %>
+        <% end %>
+      <% end %>
+      
+    <% end %>
+    
+  </div>
+  
+  <div class="post_all">
+      <% Post.all.each do |post| %>
+        <% if post.user_id == @user.id %>
+        
+        <div style="float:left; margin:10px;">
+          <%= image_tag post.user.profile, size: "50x50" %>
+        </div>
+        
+            <div style="margin:5px 0; border:2px solid;">
+              
+              <div class="post_game_name">
+                
+                <div style="margin-top:40px; border:0.5px solid;">
+                <%= post.created_at.strftime('%Y/%m/%d') %>
+                </div>
+              </div>
+              
+              <div style="margin:10px 0;">
+                <%= post.title %>
+              </div>
+              
+              <div style="margin:10px 0;">
+                <%= post.introduction %>
+              </div>
+
+        
+            </div>
+        <% end %>
+      <% end %>
+  </div>
+  
+  <div class="right-side-bar">
+    <div style="margin-top:50px;">
+      <%= form_with url: root_path, method: :get do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag 'Search', name: nil %>
+      <% end %>
+    </div>
+  </div>

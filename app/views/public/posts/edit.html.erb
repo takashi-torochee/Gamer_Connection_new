@@ -1,23 +1,35 @@
-<h1>投稿編集</h1>
+<h1 style="margin-left:300px;">投稿編集</h1>
 
-<%= form_with model: @post, url: users_posts_edit_path(@post.id) do |f| %>
+  <div class="edit_post_back" style="padding:20px;">
 
-<%= f.label "タイトル" %>
-<%= f.text_field :title %><br>
+    <%= form_with model: @post, url: users_posts_edit_path(@post.id) do |f| %>
 
-<%= f.label "文章" %>
-<%= f.text_area :introduction %><br>
-
-<%= f.label "ゲームタイトル" %>
-<%= f.text_field :game_name %><br>
-
-<%= f.label "いろんなID" %>
-<%= f.text_field :various_id %>
-
-<%= f.hidden_field :user_id, value: current_user.id %>
-
-<%= f.submit "編集完了" %>
-
-<% end %>
-
-<%= link_to "削除", destroy_posts_path(@post.id), method: :delete %>
+      <div class="new_post_form" style="margin-left:22px;">
+        <%= f.label "タイトル" %>
+        <%= f.text_field :title, style: "width:230px; margin-left:65px;" %><br>
+      </div>
+    
+      <div class="new_post_form" style="margin-left:38px;">
+        <%= f.label "文章" %>
+        <%= f.text_area :introduction, style: "width:230px; height:60px; margin-left:90px;" %><br>
+      </div>
+    
+      <div class="new_post_form">
+        <%= f.label "ゲームタイトル" %>
+        <%= f.text_field :game_name, style: "width:230px; margin-left:30px;" %><br>
+      </div>
+    
+      <div class="new_post_form" style="margin-left:17px;">
+        <%= f.label "いろんなID" %>
+        <%= f.text_field :various_id, style: "width:230px; margin-left:55px;" %><br>
+      </div>
+    
+        <%= f.hidden_field :user_id, value: current_user.id %>
+    
+      <div style="margin-top:32px;">
+        <%= f.submit "編集完了", style: "margin:0 140px; float:left;" %>
+    
+    <% end %>
+    
+          <%= link_to "削除", destroy_posts_path(@post.id), method: :delete %>
+      </div>
