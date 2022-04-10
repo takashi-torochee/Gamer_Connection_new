@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     get 'users/:id/edit' => 'public/users#edit', as: "users_edit"
     patch 'users/:id/edit' => 'public/users#update'
     get 'users/:id/withdraw_confirm' => 'public/users#withdraw_confirm', as: "users_withdraw"
+    patch 'users/:id/withdraw_confirm' => 'public/users#withdraw'
     
     get 'users/:id/follows' => 'public/users#follows', as: "follows"
     get 'users/:id/followers' => 'public/users#followers', as: "followers"

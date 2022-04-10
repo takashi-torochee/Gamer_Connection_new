@@ -18,12 +18,13 @@ body{
     height:480px;
 }
 .page_title{
-    margin-left:180px;
+    margin-left:300px;
 }
 
 .left-side-bar{
     width:15%;
     height:480px;
+    margin-top:0;
     float:left;
     text-align: left;
     background-color: green;
@@ -32,6 +33,7 @@ body{
 .right-side-bar{
     width:15%;
     height:480px;
+    margin-top:0;
     float:right;
     text-align: center;
     background-color: green;
@@ -40,12 +42,11 @@ body{
 
 /*メンバー新規登録ページ*/
 #new_form_group{
-    margin-left:350px;
+    margin-left:300px;
 }
 
 .new_image{
     float: left;
-    clear:both;
     height:190px;
     margin-top:10px;
     margin-right:80px;
@@ -118,4 +119,18 @@ body{
 .post_game_name{
     margin-top:0;
     float:right;
+}
+
+.posts_image{
+    float:left;
+    margin:10px;
+    border-radius: 40px;
+    border: 1px solid;
+}
+
+
+/*ユーザ編集ページ*/
+.edit_params{
+    margin: 20px 20px;
+    font-size: 20px;
 }

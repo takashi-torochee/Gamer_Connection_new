@@ -8,8 +8,18 @@
       <% end %>
 </div>
 
+<div class="right-side-bar">
+    <div style="margin-top:50px;">
+      <%= form_with url: root_path, method: :get do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag 'Search', name: nil %>
+      <% end %>
+    </div>
+</div>
 
-  <h1 style="margin:0 300px; width:180px;">マイページ</h1>
+
+  
+  <h1 style="margin-left:300px;">マイページ</h1>
 
   <div class="mypage">
     <%= image_tag @user.profile, size: "150x150", style:"border:1px solid; margin-top:20px;" %><br>
@@ -45,24 +55,26 @@
       <% Post.all.each do |post| %>
         <% if post.user_id == @user.id %>
         
-        <div style="float:left; margin:10px;">
-          <%= image_tag post.user.profile, size: "50x50" %>
+        <div>
+          <%= image_tag post.user.profile, class: "posts_image", size: "70x70" %>
         </div>
         
-            <div style="margin:5px 0; border:2px solid;">
+            <div style="height:100px; margin:5px 0; border:2px solid;">
               
               <div class="post_game_name">
                 
-                <div style="margin-top:40px; border:0.5px solid;">
+                <div style="margin-top:75px; border:0.5px solid;">
                 <%= post.created_at.strftime('%Y/%m/%d') %>
                 </div>
               </div>
               
-              <div style="margin:10px 0;">
-                <%= post.title %>
+              <div style="margin:10px 0; font-size: 16px;">
+                <%= link_to users_posts_show_path(post.id) do %>
+                  <%= post.title %>
+                <% end %>
               </div>
               
-              <div style="margin:10px 0;">
+              <div style="margin:10px 0; font-size: 14px;">
                 <%= post.introduction %>
               </div>
 
@@ -72,11 +84,4 @@
       <% end %>
   </div>
   
-  <div class="right-side-bar">
-    <div style="margin-top:50px;">
-      <%= form_with url: root_path, method: :get do %>
-      <%= text_field_tag :search %>
-      <%= submit_tag 'Search', name: nil %>
-      <% end %>
-    </div>
-  </div>
+  

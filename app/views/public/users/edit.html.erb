@@ -1,38 +1,56 @@
-<h1>会員情報編集</h1>
+
+<div class="left-side-bar">
+      <% rank_num = 1 %>
+      <% Post.find(Post.group(:game_name).order('count(game_name) desc').limit(5).pluck(:id)).each.with_index(1) do |post, i| %>
+        <p>第<%= rank_num %>位<%= post.game_name %></p>
+        <% rank_num += 1 %>
+      <% end %>
+</div>
+
+<div class="right-side-bar">
+    <div style="margin-top:50px;">
+      <%= form_with url: root_path, method: :get do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag 'Search', name: nil %>
+      <% end %>
+    </div>
+</div>
+
+<h1 class="page_title">会員情報編集</h1>
 
 <%= form_with model: @user, url: users_edit_path(@user.id), method: :patch do |f| %>
-  <div class="field">
-    <%= f.label "プロフィール画像" %>
-    <%= f.file_field :image, accept: "image/*" %>
+
+  <div id="new_form_group">
+  <div class="new_image">
+    <%= f.label "プロフィール画像" %><br>
+    <%= f.file_field :profile, accept: "image/*" %>
   </div>
 
-
-  <div class="field">
+  <div class="edit_params">
     <%= f.label "ニックネーム" %>
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true, style: "margin-left:80px;" %>
   </div>
 
-  <div class="field">
-    <%= f.label "メールアドレス" %>
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
+  <div class="edit_params">
     <%= f.label "年齢" %>
-    <%= f.text_field :age %>歳
+    <%= f.text_field :age, style: "margin-left:160px;" %>歳
   </div>
 
-  <div class="field">
+  <div class="edit_params">
     <%= f.label "よくプレイするゲーム" %>
     <%= f.text_field :game_title %>
   </div>
 
-  <div class="field">
-    <%= f.label "よく遊ぶ時間帯" %>
+  <div class="edit_params">
+    <%= f.label "よく遊ぶ時間帯　　　" %>
     <%= f.select :play_time, [["平日昼間","平日昼間"], ["平日夜間","平日夜間"], ["土日昼間","土日昼間"], ["土日夜間","土日夜間"], ["不定期","不定期"]] %>
   </div>
+  
+  </div>
 
-  <div class="actions">
+  <div style="text-align:center; margin-top:40px;">
     <%= f.submit "保存する" %>
   </div>
+  
 <% end %>
