@@ -1,3 +1,20 @@
 // Place all the styles related to the public/posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.tv_image{
+    width: 100vw;
+    height: 446px;
+    background-image: image-url('TV.jpeg');
+    background-repeat: no-repeat;
+    background-size: 880px;
+    background-position: center;
+}
+
+@font-face {
+  font-family: 'dot-text';
+  src: font-url('JF-Dot-MPlus12.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

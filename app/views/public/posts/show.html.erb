@@ -1,32 +1,63 @@
-<h1 style="margin-left:300px;">投稿詳細</h1>
 
- <div class="post_show" style="margin:20px">
-    <%= image_tag @post.user.profile, size: "70x70", style: "float:left;" %>
-     
-      <div style="float:left">
-        <%= @post.title %><br>
-        <%= @post.introduction %>
+<div style="margin-bottom:100px; margin-top:50px;">
+
+<h1 class="page_title">投稿詳細</h1>
+
+ <div class="post_show">
+    <div style="float:right">
+        <div style="border:1px solid">
+       <%= @post.game_name %><br>
+        </div>
+
+        <div style="margin-top:100px; margin-left:85px; border:1px solid">
+          <%= @post.various_id %>
+        </div>
       </div>
      
-   <%= @post.game_name %><br>
-   <%= @post.various_id %>
- </div>
+     <%= link_to users_show_path(@post.user_id) do %>
+       <%= image_tag @post.user.profile, size: "70x70", class: "top_post_image"%>
+    <% end %>
 
- <div>
-     <p>コメント件数：<%= @post.comments.count %></p>
-        <% @post.comments.each do |comment| %>
+      <div class="post_title">
+        <b><%= @post.title %></b><br>
+      </div>
+      
+      <div class="post_introduction">
+        <%= @post.introduction %>
+      </div>
+
+ </div>
+     <b><%= link_to "編集", users_posts_edit_path(@post.id), style: "margin-top:0; margin-left:880px; text-decoration: none; color:green;" %></b>
+
+    <b><p style="margin-left:400px;">コメント件数：<%= @post.comments.count %></p></b>
+     <div class="comment_area">
+       
+    <% @post.comments.each do |comment| %>
+
+          
           <div>
-              <%= image_tag comment.user.profile, size: "70x70" %>
-            <%= comment.user.name %>
-            <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment_introduction %>
+              <div style="float:right;">
+                <% if comment.user == current_user %>
+                  <%= link_to "削除", destroy_posts_comments_path(comment.id), method: :delete, style: "text-decoration: none;" %>
+                <% end %> 
+              </div>
+              <%= link_to users_show_path(comment.user_id), style: "text-decoration: none;" do %>
+            <%= image_tag comment.user.profile, size: "35x35", class: "comment_image" %>
+              <% end %>
+
+            <div class="post_comment">
+              <%= comment.comment_introduction %>
+            </div>
+            
           </div>
         <% end %>
  </div>
 
- <div>
+ <div style="margin-top:20px; margin-left:500px;">
   <%= form_with model: [@post, @comment], url: posts_comments_path do |f| %>
-    <%= f.text_area :comment_introduction, rows: '5', placeholder: "コメントをここに" %>
+    <%= f.text_area :comment_introduction, rows: '5', placeholder: "コメントをここに", style: "width:300px; height:30px;" %>
     <%= f.submit "送信する" %>
   <% end %>
  </div>
 
+</div>

@@ -11,7 +11,35 @@
   </head>
 
   <body>
-    
+    <header style="background-color:black;">
+      
+        <div class="header_tag">
+          
+          <nav>
+            <ul>
+              <li>
+                <b><%= link_to "Topへ", admin_homes_path, style: "text-decoration: none; color:black;" %></b>
+              </li>
+              
+              <li>
+                <b><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, style: "text-decoration: none; color:black;" %></b>
+              </li>
+                
+            </ul>
+          </nav>
+      </div>
+        
+        <div class="header-text" style="text-align:center;">Gamer Connection</div>
+        
+      
+    </header>
     <%= yield %>
+    
+    <footer>
+        <div class="footer_area">
+          
+        </div>
+        
+      </footer>
   </body>
 </html>

@@ -1,35 +1,42 @@
+
+<div style="margin-bottom:100px; margin-top:50px;">
 <h1 style="margin-left:300px;">投稿編集</h1>
 
-  <div class="edit_post_back" style="padding:20px;">
+<div class="tv_image">
+  <div class="edit_post_back" style="padding:20px; font-family: dot-text;">
 
     <%= form_with model: @post, url: users_posts_edit_path(@post.id) do |f| %>
 
       <div class="new_post_form" style="margin-left:22px;">
-        <%= f.label "タイトル" %>
+        <b><%= f.label "タイトル" %></b>
         <%= f.text_field :title, style: "width:230px; margin-left:65px;" %><br>
       </div>
     
       <div class="new_post_form" style="margin-left:38px;">
-        <%= f.label "文章" %>
+        <b><%= f.label "文章" %></b>
         <%= f.text_area :introduction, style: "width:230px; height:60px; margin-left:90px;" %><br>
       </div>
     
       <div class="new_post_form">
-        <%= f.label "ゲームタイトル" %>
+        <b><%= f.label "ゲームタイトル" %></b>
         <%= f.text_field :game_name, style: "width:230px; margin-left:30px;" %><br>
       </div>
     
       <div class="new_post_form" style="margin-left:17px;">
-        <%= f.label "いろんなID" %>
+        <b><%= f.label "いろんなID" %></b>
         <%= f.text_field :various_id, style: "width:230px; margin-left:55px;" %><br>
       </div>
     
         <%= f.hidden_field :user_id, value: current_user.id %>
     
       <div style="margin-top:32px;">
-        <%= f.submit "編集完了", style: "margin:0 140px; float:left;" %>
+        <b><%= f.submit "編集完了", style: "margin:0 140px; float:left; color:green;" %></b>
     
     <% end %>
     
-          <%= link_to "削除", destroy_posts_path(@post.id), method: :delete %>
+          <b><%= link_to "削除", destroy_posts_path(@post.id), method: :delete, style: "text-decoration: none; color:red;" %></b>
       </div>
+      
+</div>
+
+</div>

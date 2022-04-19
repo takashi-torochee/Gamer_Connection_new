@@ -16,7 +16,7 @@ class Admin::SessionsController < Devise::SessionsController
 
   # DELETE /resource/sign_out
   # def destroy
-  #   super
+  #   redirect_to new_admin_session_path
   # end
 
   # protected
@@ -25,4 +25,8 @@ class Admin::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  
+  def after_sign_out_path_for(resource)
+    new_admin_session_path
+  end
 end

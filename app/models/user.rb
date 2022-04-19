@@ -35,6 +35,10 @@ class User < ApplicationRecord
 
         enum play_time: { '平日昼間': 0, '平日夜間': 1, '土日昼間': 2, '土日夜間': 3, '不定期': 4 }
         
+        def self.search(search)
+          search ? where('name LIKE ?', "%#{search}%") : all
+        end
+        
 
 
 end

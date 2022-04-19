@@ -1,19 +1,23 @@
+
+<div style="margin-bottom:100px; margin-top:50px;">
+
 <h2 class="page_title">メンバーログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="login_form">
-    <%= f.label "メールアドレス" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", style: "width:25%; margin-left:40px;" %>
+    <b><%= f.label "メールアドレス" %></b>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", style: "width:35%; margin-left:20px;" %>
   </div>
 
   <div class="login_form">
-    <%= f.label "パスワード" %>
-    <%= f.password_field :password, autocomplete: "current-password", style: "width:25%; margin-left:70px;" %>
+    <b><%= f.label "パスワード" %></b>
+    <%= f.password_field :password, autocomplete: "current-password", style: "width:35%; margin-left:50px;" %>
   </div>
 
 
-  <div style="text-align:center; margin-top:40px;">
+  <div style="margin-left:650px; margin-top:40px;">
     <%= f.submit "ログイン" %>
   </div>
 <% end %>
 
+</div>

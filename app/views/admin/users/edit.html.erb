@@ -1,20 +1,43 @@
-<h1>管理者側会員情報編集画面</h1>
+<h1 class="page_title">会員情報編集画面</h1>
 
 <%= form_with model: @user, url: admin_user_path, method: :patch do |f| %>
+  
+  <table border="2" class="admin_edit_table">
 
-  <%= @user.name %>
-  <%= @user.age %>
-  <%= @user.email %>
-  <%= @user.game_title %>
+  <tr>
+    <th>ニックネーム</th>
+  　<td><%= @user.name %></td>
+  </tr>
 
-  <div class="field">
-    <%= f.radio_button :is_active, "true" %>
-    <%= f.label :is_active, "会員" %>
-    <%= f.radio_button :is_active, "false" %>
-    <%= f.label :is_active, "退会" %>
-  </div>
+  <tr>
+    <th>年齢</th>
+  　<td><%= @user.age %>歳</td>
+  </tr>
+  
+  <tr>
+    <th>メールアドレス</th>
+    <td><%= @user.email %></td>
+  </tr>
+  
+  <tr>
+    <th>よく遊ぶゲーム</th>
+  　<td><%= @user.game_title %></td>
+  </tr>
+  
+  <tr>
+    <th>会員ステータス</th>
+    
+  　<td>
+      <%= f.radio_button :is_active, "true" %>
+      <%= f.label :is_active, "会員" %>
+      <%= f.radio_button :is_active, "false" %>
+      <%= f.label :is_active, "退会" %>
+    </td>
+  </tr>
 
-  <div class="actions">
+  </table>
+
+  <div class="actions" style="margin:20px 0; text-align:center;">
     <%= f.submit "保存する" %>
   </div>
 <% end %>

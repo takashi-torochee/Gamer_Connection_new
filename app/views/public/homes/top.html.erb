@@ -1,22 +1,40 @@
-<h1>投稿一覧</h1>
 
-  <% @posts.each do |t| %>
-    <div style="margin: 20px">
-      <%= t.title %><br>
-      <%= t.introduction %><br>
-      <%= t.game_name %><br>
-      <%= t.various_id %><br>
+<div style="margin-bottom:100px; margin-top:50px;">
+
+<h2 class="page_title">投稿一覧</h2>
+
+  <% @posts.each do |post| %>
+   
+    <div class="post_top">
+      <div style="float:right">
+        <div style="border:1px solid">
+       <%= post.game_name %><br>
+        </div>
+
+        <div style="margin-top:50px; margin-left:85px; border:1px solid">
+          <%= post.various_id %>
+        </div>
+      </div>
+     
+    <%= image_tag post.user.profile, size: "70x70", class: "top_post_image"%>
+
+      <div class="post_title">
+        <%= link_to users_posts_show_path(post.id), style: "text-decoration: none; color:blue;" do %>
+        <b><%= post.title %></b><br>
+        <% end %>
+      </div>
+      <div class="post_introduction">
+        <%= post.introduction %>
+        
+      </div>
 
       
-        <%= link_to "編集", users_posts_edit_path(t.id) %>
 
-    </div>
+ </div>
+
+      
+        
+
   <% end %>
-
   
-
-<li class="nav-item">
-  <%= link_to destroy_user_session_path, method: :delete do %>
-    <font>ログアウト</font>
-  <% end %>
-</li>
+  </div>

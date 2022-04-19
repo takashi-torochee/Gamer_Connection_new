@@ -8,6 +8,11 @@ class Public::CommentsController < ApplicationController
     @comment.save
     redirect_to users_posts_show_path(@post)
   end
+  
+  def destroy
+    Comment.find(params[:id]).destroy
+    redirect_to root_path
+  end
 
 
   private

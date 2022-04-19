@@ -1,20 +1,5 @@
 
-<div class="left-side-bar">
-      <% rank_num = 1 %>
-      <% Post.find(Post.group(:game_name).order('count(game_name) desc').limit(5).pluck(:id)).each.with_index(1) do |post, i| %>
-        <p>第<%= rank_num %>位<%= post.game_name %></p>
-        <% rank_num += 1 %>
-      <% end %>
-</div>
-
-<div class="right-side-bar">
-    <div style="margin-top:50px;">
-      <%= form_with url: root_path, method: :get do %>
-      <%= text_field_tag :search %>
-      <%= submit_tag 'Search', name: nil %>
-      <% end %>
-    </div>
-</div>
+<div style="margin-bottom:100px; margin-top:50px; font-family: dot-text;">
 
 <h1 class="page_title">会員情報編集</h1>
 
@@ -49,8 +34,11 @@
   
   </div>
 
-  <div style="text-align:center; margin-top:40px;">
+  <div style="margin-left:400px; margin-top:40px;">
     <%= f.submit "保存する" %>
+     <%= link_to "退会する", users_withdraw_path(@user.id), style: "margin-left:100px; text-decoration: none;" %>
   </div>
   
 <% end %>
+ 
+ </div>

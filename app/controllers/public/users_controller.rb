@@ -15,6 +15,7 @@ class Public::UsersController < ApplicationController
     @user.update(user_params)
     redirect_to users_show_path(@user.id)  
   end
+  
 
   def withdraw_confirm
   end

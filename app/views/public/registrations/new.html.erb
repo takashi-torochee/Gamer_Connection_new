@@ -1,3 +1,6 @@
+
+<div style="margin-bottom:100px; margin-top:50px; font-family: dot-text;">
+
 <h2 class="page_title">新規メンバー登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -5,39 +8,39 @@
 
   <div id="new_form_group">
   <div class="new_image">
-    <%= f.label "プロフィール画像" %><br>
+    <b><%= f.label "プロフィール画像" %></b><br>
     <%= f.file_field :profile, accept: "image/*" %>
     
   </div>
 
 
   <div class="new_params">
-    <%= f.label "ニックネーム" %>
+    <b><%= f.label "ニックネーム" %></b>
     <%= f.text_field :name, autofocus: true, style: "margin-left:65px;" %>
   </div>
 
   <div class="new_params">
-    <%= f.label "メールアドレス" %>
+    <b><%= f.label "メールアドレス" %></b>
     <%= f.email_field :email, autocomplete: "email", style: "margin-left:50px;" %>
   </div>
 
   <div class="new_params">
-    <%= f.label "パスワード" %>
+    <b><%= f.label "パスワード" %></b>
     <%= f.password_field :password, autocomplete: "new-password", style: "margin-left:82px;" %>
   </div>
 
   <div class="new_params">
-    <%= f.label "年齢" %>
+    <b><%= f.label "年齢" %></b>
     <%= f.text_field :age, style: "margin-left:130px;" %>歳
   </div>
 
   <div class="new_params">
-    <%= f.label "よくプレイするゲーム" %>
+    <b><%= f.label "よくプレイするゲーム" %></b>
     <%= f.text_field :game_title %>
   </div>
 
   <div class="new_params">
-    <%= f.label "よく遊ぶ時間帯　　　" %>
+    <b><%= f.label "よく遊ぶ時間帯　　　" %></b>
     <%= f.select :play_time, [["平日昼間","平日昼間"], ["平日夜間","平日夜間"], ["土日昼間","土日昼間"], ["土日夜間","土日夜間"], ["不定期","不定期"]] %>
   </div>
   
@@ -46,5 +49,9 @@
   <div style="text-align:center; margin-top:40px;">
     <%= f.submit "新規登録" %>
   </div>
+  
+
 <% end %>
+
+</div>
   

@@ -14,6 +14,7 @@ class Admin::UsersController < ApplicationController
     redirect_to admin_homes_path
   end
   
+  
   private
   
   def user_params

@@ -11,7 +11,93 @@
   </head>
 
   <body>
-
+    <div class="body_size">
+    
+    <header class="header_image">
+      
+        <div class="header_tag">
+          <%= link_to root_path do %>
+            <%= image_tag'logo_new.png', size: "120x100"%>
+          <% end %>
+          
+          <nav>
+            <ul>
+              <% if user_signed_in? %>
+              <li>
+                <b><%= link_to "マイページ", users_show_path(current_user.id), style: "text-decoration: none; color:black;" %></b>
+              </li>
+              
+              <li>
+                <b><%= link_to "新規投稿", users_posts_path, style: "text-decoration: none; color:black;" %></b>
+              </li>
+              
+              <li>
+                <b><%= link_to "ログアウト", destroy_user_session_path, method: :delete, style: "text-decoration: none; color:black;" %></b>
+              </li>
+                
+              
+              <% else %>
+              <li>
+                <b><%= link_to "新規登録", new_user_registration_path, style: "text-decoration: none; color:black;" %></b>
+              </li>
+              
+              <li>
+                <b><%= link_to "ログイン", new_user_session_path, style: "text-decoration: none; color:black;" %></b>
+              </li>
+              
+              <li>
+                <b><%= link_to "投稿一覧", root_path, style: "text-decoration: none; color:black;" %></b>
+              </li>
+              
+              <% end %>
+            </ul>
+          </nav>
+      </div>
+      
+      <div class="header-center">
+        
+        <div class="header-text">Gamer Connection</div>
+        
+        </div>
+      
+    </header>
+    
+    <div class="left-side-bar">
+  
+        <table border="2" class="rank_table">
+          <td colspan="2">ゲームランキング</td>
+          <% rank_num = 1 %>
+            <% Post.find(Post.group(:game_name).order('count(game_name) desc').limit(5).pluck(:id)).each.with_index(1) do |post, i| %>
+              <tr>
+                <th>第<%= rank_num %>位</th>
+              　<td><%= post.game_name %></td>
+              </tr>
+        
+                <% rank_num += 1 %>
+            <% end %>
+        
+        </table>
+              
+      </div>
+      
+      <div class="right-side-bar">
+          <div style="margin-top:50px;">
+            <%= form_with url: root_path, method: :get do %>
+            <%= text_field_tag :search %>
+            <%= submit_tag 'Search', name: nil %>
+            <% end %>
+          </div>
+      </div>
     <%= yield %>
+    
+    <footer>
+        <div class="footer_area">
+          <div style="color:white; text-align:center;">Logo made by <a href="https://www.designevo.com/" title="Free Online Logo Maker">DesignEvo free logo creator</a></div>
+        </div>
+        
+      </footer>
+      
+    </div>
+
   </body>
 </html>

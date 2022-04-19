@@ -1,2 +1,25 @@
-<h1>フォロワー一覧</h1>
+<div style="margin-bottom:100px; margin-top:50px;">
 
+<h1 class="page_title">フォロワー一覧</h1>
+
+<% if @users.exists? %>
+
+<div class="follow_area">
+  <% @users.each do |user| %>
+     <div style="margin:40px;">
+      <%= link_to users_show_path(user.id), style: "text-decoration: none;" do %>
+        <%= image_tag user.profile, style: "border:1px solid;", size: "150x130" %><br>
+        <%= user.name %>
+      <% end %>
+     </div>
+  <% end %>
+</div>
+
+  
+<% else %>
+
+  <p style="margin-left:400px;">ユーザーはいません</p>
+  
+<% end %>
+
+</div>

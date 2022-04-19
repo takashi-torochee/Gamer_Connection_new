@@ -10,8 +10,8 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
 
-    get 'relationships/follows' => 'public/relationships#follows'
-    get 'relationships/followers' => 'public/relationships#followers'
+    get 'relationships/:id/follows' => 'public/relationships#follows', as: "relationships_follows"
+    get 'relationships/:id/followers' => 'public/relationships#followers', as: "relationships_followers"
     
     get 'users/posts' => 'public/posts#new'
     post 'users/posts' => 'public/posts#create'
@@ -34,6 +34,7 @@ Rails.application.routes.draw do
    
 
     post 'users/posts/:id/comments' => 'public/comments#create', as: "posts_comments"
+    delete 'users/posts/:id/comments' => 'public/comments#destroy', as: "destroy_posts_comments"
 
 
 
