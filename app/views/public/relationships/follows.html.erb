@@ -6,7 +6,7 @@
     
     <div class="follow_area">
       <% @users.each do |user| %>
-          <div style="margin:40px;">
+          <div style="margin:20px 34px; color:white;">
             <%= link_to users_show_path(user.id), style: "text-decoration: none;" do %>
               <%= image_tag user.profile, style: "border:1px solid;", size: "150x130" %><br>
               <%= user.name %>

@@ -17,259 +17,14 @@
 body{
     height:480px;
     margin:0;
+    background-color: lightgray;
+    background-image: url('body_image.jpg');
+    
 }
 .page_title{
     margin-left:400px;
     font-family: dot-text;
 }
-
-.left-side-bar{
-    width:20%;
-    margin-top:0;
-    float:left;
-    text-align:center;
-    background-color: lightblue;
-    padding-bottom: 32768px;
-    margin-bottom: -32768px;
-}
-
-.right-side-bar{
-    width:20%;
-    margin-top:0;
-    float:right;
-    text-align: center;
-    background-color: red;
-    padding-bottom: 32768px;
-    margin-bottom: -32768px;
-}
-
-.rank_table th{
-    background-color: lightgray;
-}
-
-.rank_table td{
-    background-color: white;
-}
-
-.rank_table{
-    margin:20px auto;
-}
-
-
-
-
-/*メンバー新規登録ページ*/
-#new_form_group{
-    margin-left:300px;
-}
-
-.new_image{
-    float: left;
-    height:190px;
-    margin-top:10px;
-    margin-right:80px;
-    font-family: dot-text;
-}
-
-.new_params{
-    margin:10px 20px;
-    font-family: dot-text;
-}
-
-/*メンバーログインページ*/
-.login_form{
-    margin-top:20px;
-    margin-left:470px;
-    font-family: dot-text;
-}
-
-
-/*topページ*/
-.post_title{
-    margin-top:15px;
-    margin-left:100px;
-    font-size:18px;
-}
-
-.post_top{
-    width:35%;
-    height:100px;
-    border: 2px solid;
-    margin:10px auto;
-}
-
-.post_introduction{
-    margin-top:10px;
-    margin-left:100px;
-}
-
-/*新規投稿ページ*/
-.new_post_back{
-    width:39%;
-    height:320px;
-    margin:0 auto;
-}
-
-.new_post_form{
-    font-size:20px;
-    margin-top:20px;
-    margin-bottom:20px;
-    text-align: center;
-}
-
-.post_danger{
-    font-size:14px;
-    color: red;
-    text-align: center;
-}
-
-.new_post_button {
-  display: inline-block;
-  border-radius: 20%;
-  font-size: 15px;
-  text-align: center;
-  cursor: pointer;
-  padding: 12px 12px;
-  margin-top: 10px;
-  margin-left: 240px;
-  background: black;
-  color: white;
-  line-height: 1em;
-  border: 2px solid black;
-  font-family: dot-text;
-}
-.new_post_button:hover {
-  color: #000000;
-  background: #ffffff;
-}
-
-/*投稿編集ページ*/
-.edit_post_back{
-    width:39%;
-    height:320px;
-    margin:0 auto;
-}
-
-/*投稿詳細ページ*/
-.post_show{
-    width:35%;
-    height:150px;
-    border: 2px solid;
-    margin:0 auto;
-}
-
-.comment_area{
-    width:35%;
-    height: 23%;
-    border:1px solid;
-    margin:10px auto;
-}
-
-.post_comment{
-    width:280px;
-    height:35px;
-    border:1px solid;
-    margin-left:70px;
-    margin-top:13px;
-    margin-bottom:20px;
-}
-
-.comment_image{
-    border-radius: 28px;
-    margin-left:10px;
-    float:left;
-}
-
-/*マイページ*/
-.mypage{
-    height:500px;
-    float:left;
-    margin-left:100px;
-}
-
-.post_all{
-    width:400px;
-    margin-top:10px;
-    margin-left:100px;
-    float:left;
-}
-
-
-/*投稿に関して*/
-.post_game_name{
-    margin-top:0;
-    float:right;
-}
-
-.posts_image{
-    float:left;
-    margin:10px;
-    border-radius: 40px;
-    border: 1px solid;
-}
-
-
-/*ユーザ編集ページ*/
-.edit_params{
-    margin: 20px 20px;
-    font-size: 20px;
-}
-
-
-.follow_area{
-    width:60%;
-    margin-top:20px;
-    margin-left:340px;
-    margin-bottom:50px;
-    display: flex;
-    flex-wrap: wrap
-}
-
-
-
-.admin_user_all table{
-    margin: 20px auto;
-}
-
-.admin_user_all td{
-    text-align: center;
-    padding:7px 0;
-}
-
-.admin_user_all th{
-    border: 1px solid;
-}
-
-
-
-.admin_edit_table{
-    border-collapse: collapse;
-    width:40%;
-    margin:0 auto;
-}
-
-.admin_edit_table th{
-    padding: 10px;
-    background-color: lightgray;
-    border:1px solid;
-    width:35%;
-}
-
-.admin_edit_table td{
-     text-align: center;
-    width:65%;
-}
-
-
-
-.top_post_image{
-    float:left;
-    border-radius: 40px;
-    margin:10px;
-}
-
-
-
 
 
 ul {
@@ -338,4 +93,327 @@ footer{
     box-sizing: border-box;
     overflow: hidden;
 }
+
+.left-side-bar{
+    width:20%;
+    margin-top:0;
+    float:left;
+    text-align:center;
+    background-image: url('controller_tag.jpg');
+    background-repeat: no-repeat;
+    background-color: lightgray;
+    padding-bottom: 32768px;
+    margin-bottom: -32768px;
+}
+
+.right-side-bar{
+    width:20%;
+    margin-top:0;
+    float:right;
+    text-align: center;
+    background-color: #8B0000;
+    padding-bottom: 32768px;
+    margin-bottom: -32768px;
+}
+
+.rank_table th{
+    background-color: lightgray;
+}
+
+.rank_table td{
+    background-color: white;
+}
+
+.rank_table{
+    margin:20px auto;
+}
+
+
+
+
+/*メンバー新規登録ページ*/
+#new_form_group{
+    margin-left:300px;
+}
+
+.new_image{
+    float: left;
+    height:190px;
+    margin-top:10px;
+    margin-right:80px;
+    font-family: dot-text;
+}
+
+.new_params{
+    margin:10px 20px;
+    font-family: dot-text;
+}
+
+/*メンバーログインページ*/
+.login_form{
+    margin-top:20px;
+    margin-left:470px;
+    font-family: dot-text;
+}
+
+
+/*topページ*/
+.post_title{
+    margin-top:15px;
+    margin-left:100px;
+    font-size:15px;
+}
+
+.post_top{
+    width:35%;
+    height:100px;
+    border: 2px solid;
+    margin:10px auto;
+    background: white;
+}
+
+.post_introduction{
+    margin-top:10px;
+    margin-left:100px;
+    font-size:12px;
+}
+
+/*新規投稿ページ*/
+.new_post_back{
+    width:39%;
+    height:320px;
+    margin:0 auto;
+}
+
+.new_post_form{
+    font-size:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+    text-align: center;
+}
+
+.post_danger{
+    font-size:14px;
+    color: red;
+    text-align: center;
+}
+
+.new_post_button {
+    display: inline-block;
+    border-radius: 10%;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    padding: 12px 12px;
+    margin-top: 10px;
+    margin-left: 240px;
+    background: black;
+    color: white;
+    line-height: 1px;
+    border: 2px solid black;
+    font-family: dot-text;
+}
+.new_post_button:hover {
+    color: #000000;
+    background: #ffffff;
+}
+
+/*投稿編集ページ*/
+.edit_post_back{
+    width:39%;
+    height:320px;
+    margin:0 auto;
+}
+
+.edit_post_button{
+    display: inline-block;
+    border-radius: 10%;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    padding: 12px 12px;
+    margin-top: 10px;
+    margin-left: 135px;
+    background: black;
+    color: white;
+    line-height: 1px;
+    border: 2px solid black;
+    font-family: dot-text;
+}
+
+.delete_button{
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 20%;
+    font-size: 15px;
+    text-align: center;
+    padding: 12px 12px;
+    margin-top: 10px;
+    margin-left: 85px;
+    background: red;
+    color: white;
+    line-height: 1px;
+    border: 2px solid red;
+    font-family: dot-text;
+}
+
+/*投稿詳細ページ*/
+.post_show{
+    width:35%;
+    height:150px;
+    border: 2px solid;
+    margin:0 auto;
+    background-color: white;
+}
+
+.comment_area{
+    width:35%;
+    height: 23%;
+    border:1px solid;
+    margin:10px auto;
+    background-color: white;
+}
+
+.post_comment{
+    width:280px;
+    height:35px;
+    border:1px solid;
+    margin-left:70px;
+    margin-top:13px;
+    margin-bottom:20px;
+}
+
+.comment_image{
+    border-radius: 28px;
+    margin-left:10px;
+    float:left;
+}
+
+.show_edit_button{
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 20%;
+    font-size: 14px;
+    text-align: center;
+    padding: 12px 12px;
+    margin-top:0;
+    margin-left:850px;
+    background: green;
+    color: white;
+    line-height: 1px;
+    border: 2px solid green;
+    font-family: dot-text;
+    
+}
+
+/*マイページ*/
+.mypage{
+    height:500px;
+    float:left;
+    margin-left:100px;
+}
+
+.post_all{
+    width:400px;
+    margin-top:10px;
+    margin-left:80px;
+    margin-bottom:50px;
+    float:left;
+    
+}
+
+
+/*投稿に関して*/
+.post_game_name{
+    margin-top:0;
+    float:right;
+}
+
+.posts_image{
+    float:left;
+    margin:10px;
+    border-radius: 40px;
+    border: 1px solid;
+}
+
+
+/*ユーザ編集ページ*/
+.edit_params{
+    margin: 20px 20px;
+    font-size: 20px;
+}
+
+
+.follow_area{
+    width:50%;
+    margin-top:20px;
+    margin-left:340px;
+    margin-bottom:50px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+
+
+.admin_user_all table{
+    margin: 20px auto;
+}
+
+.admin_user_all td{
+    text-align: center;
+    padding:7px 0;
+}
+
+.admin_user_all th{
+    border: 1px solid;
+}
+
+
+
+.admin_edit_table{
+    border-collapse: collapse;
+    width:40%;
+    margin:0 auto;
+    background-color: white;
+}
+
+.admin_edit_button{
+    display: inline-block;
+    border-radius: 20%;
+    font-size: 15px;
+    text-align: center;
+    padding: 12px 12px;
+    margin-top: 10px;
+    margin-left: 240px;
+    background: green;
+    color: white;
+    line-height: 1px;
+    border: 1px solid black;
+}
+
+.admin_edit_table th{
+    padding: 10px;
+    background-color: lightgray;
+    border:1px solid;
+    width:35%;
+}
+
+.admin_edit_table td{
+     text-align: center;
+    width:65%;
+}
+
+
+
+.top_post_image{
+    float:left;
+    border-radius: 40px;
+    margin:10px;
+}
+
+
+
+
+
 

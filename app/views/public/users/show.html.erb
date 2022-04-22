@@ -2,24 +2,25 @@
 <div style="margin-bottom:100px; margin-top:50px;">
 
   <% if current_user != @user %>
-  <h1 style="margin-left:300px; font-family: dot-text;"><%= @user.name %>さんのページ</h1>
-  
+    <h1 style="margin-left:300px; font-family: dot-text;"><%= @user.name %>さんのページ</h1>
+    
   <% else %>
-  <h1 style="margin-left:300px; font-family: dot-text;">マイページ</h1>
+    <h1 style="margin-left:300px; font-family: dot-text;">マイページ</h1>
   
   <% end %>
 
   <div class="mypage">
-    <%= image_tag @user.profile, size: "150x150", style:"border:1px solid; margin-top:20px;" %><br>
-    ニックネーム:<%= @user.name %><br>
+    <%= image_tag @user.profile, size: "150x150", style:"border:1px solid; margin-top:20px; background-color:white;" %><br>
+      ニックネーム:<%= @user.name %><br>
    
     <div style="margin:10px 0; font-family: dot-text;">
-    <%= link_to relationships_follows_path(@user.id), style: "text-decoration: none; color:blue;" do %>
-      フォロー<%= @follow_users.count %>
-    <% end %>&nbsp;&nbsp;
-    <%= link_to relationships_followers_path(@user.id), style: "text-decoration: none; color:blue;" do %>
-     フォロワー<%= @follower_users.count %>
-    <% end %>
+      <%= link_to relationships_follows_path(@user.id), style: "text-decoration: none; color:blue;" do %>
+        フォロー<%= @follow_users.count %>
+      <% end %>&nbsp;&nbsp;
+      
+      <%= link_to relationships_followers_path(@user.id), style: "text-decoration: none; color:blue;" do %>
+       フォロワー<%= @follower_users.count %>
+      <% end %>
     </div>
     
     <% if @user == current_user %>
@@ -47,23 +48,26 @@
           <%= image_tag post.user.profile, class: "posts_image", size: "70x70" %>
         </div>
         
-            <div style="height:100px; margin:5px 0; border:2px solid;">
+            <div style="height:100px; margin:5px 0; border:2px solid; background-color:white;">
               
               <div class="post_game_name">
                 
                 <div style="margin-top:75px; border:0.5px solid;">
                 <%= post.created_at.strftime('%Y/%m/%d') %>
                 </div>
+                
               </div>
               
               <div style="margin:10px 0; font-size: 16px;">
+                
                 <%= link_to users_posts_show_path(post.id), style: "text-decoration: none; color:blue;" do %>
-                  <b><%= post.title %></b>
+                  <b><%= post.title.truncate(16) %></b>
                 <% end %>
+                
               </div>
               
               <div style="margin:10px 0; font-size: 14px;">
-                <%= post.introduction %>
+                <%= post.introduction.truncate(24) %>
               </div>
 
         

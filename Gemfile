@@ -59,3 +59,4 @@ gem 'devise'
 
 gem 'pry-rails'
 
+gem 'kaminari','~> 1.2.1'

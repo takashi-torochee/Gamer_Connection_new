@@ -30,11 +30,11 @@
         <%= f.hidden_field :user_id, value: current_user.id %>
     
       <div style="margin-top:32px;">
-        <b><%= f.submit "編集完了", style: "margin:0 140px; float:left; color:green;" %></b>
+        <input type="submit" value="編集完了!" class="edit_post_button">
     
     <% end %>
     
-          <b><%= link_to "削除", destroy_posts_path(@post.id), method: :delete, style: "text-decoration: none; color:red;" %></b>
+          <b><%= link_to "削除", destroy_posts_path(@post.id), method: :delete, class: "delete_button" %></b>
       </div>
       
 </div>

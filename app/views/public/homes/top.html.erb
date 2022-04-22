@@ -7,11 +7,11 @@
    
     <div class="post_top">
       <div style="float:right">
-        <div style="border:1px solid">
-       <%= post.game_name %><br>
+        <div style="border:1px solid;">
+       <%= post.game_name %>
         </div>
 
-        <div style="margin-top:50px; margin-left:85px; border:1px solid">
+        <div style="margin-top:50px; margin-left:auto; border:1px solid">
           <%= post.various_id %>
         </div>
       </div>
@@ -20,11 +20,11 @@
 
       <div class="post_title">
         <%= link_to users_posts_show_path(post.id), style: "text-decoration: none; color:blue;" do %>
-        <b><%= post.title %></b><br>
+        <b><%= post.title.truncate(10) %></b>
         <% end %>
       </div>
       <div class="post_introduction">
-        <%= post.introduction %>
+        <%= post.introduction.truncate(20) %>
         
       </div>
 

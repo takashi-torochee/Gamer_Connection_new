@@ -68,10 +68,18 @@
           <td colspan="2">ゲームランキング</td>
           <% rank_num = 1 %>
             <% Post.find(Post.group(:game_name).order('count(game_name) desc').limit(5).pluck(:id)).each.with_index(1) do |post, i| %>
+            <% if post.nil? %>
+              <tr>
+                <th>第<%= rank_num %>位</th>
+              　<td></td>
+              </tr>
+              
+            <% else %>
               <tr>
                 <th>第<%= rank_num %>位</th>
               　<td><%= post.game_name %></td>
               </tr>
+            <% end %>
         
                 <% rank_num += 1 %>
             <% end %>
@@ -83,10 +91,25 @@
       <div class="right-side-bar">
           <div style="margin-top:50px;">
             <%= form_with url: root_path, method: :get do %>
-            <%= text_field_tag :search %>
-            <%= submit_tag 'Search', name: nil %>
+              <%= text_field_tag :search %>
+              <%= submit_tag '検索', name: nil %>
             <% end %>
           </div>
+          
+          <div style="color:white; text-align:center; text-size:10px; margin-top:50px;">
+            ニンテンドー公式サイトは 
+            <a href="https://www.nintendo.co.jp/index.html" title="https://www.nintendo.co.jp/index.html" style="background-color:white; text-decoration:none;">
+              こちら
+            </a>
+          </div>
+          
+          <div style="color:white; text-align:center; text-size:10px; margin-top:10px;">
+            playstation公式サイトは 
+            <a href="https://www.playstation.com/ja-jp/" title="https://www.playstation.com/ja-jp/" style="background-color:white; text-decoration:none;">
+              こちら
+            </a>
+          </div>
+          
       </div>
     <%= yield %>
     
