@@ -18,7 +18,7 @@ body{
     height:480px;
     margin:0;
     background-color: lightgray;
-    background-image: url('body_image.jpg');
+    background-image: image-url('body_image.jpg');
     
 }
 .page_title{
@@ -34,7 +34,7 @@ ul {
 
 .header_image{
     height: 50vh;
-    background-image: url('PC_controller.jpg');
+    background-image: image-url('PC_controller.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -99,7 +99,7 @@ footer{
     margin-top:0;
     float:left;
     text-align:center;
-    background-image: url('controller_tag.jpg');
+    background-image: image-url('controller_tag.jpg');
     background-repeat: no-repeat;
     background-color: lightgray;
     padding-bottom: 32768px;
