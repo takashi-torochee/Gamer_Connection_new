@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_01_124750) do
+ActiveRecord::Schema.define(version: 2022_04_24_104931) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 2022_04_01_124750) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name", default: "", null: false
-    t.integer "age", null: false
+    t.integer "age", default: 20, null: false
     t.string "game_title", default: "", null: false
     t.integer "play_time", default: 0, null: false
     t.string "profile_id", default: "", null: false
