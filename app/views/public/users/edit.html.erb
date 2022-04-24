@@ -35,8 +35,8 @@
   </div>
 
   <div style="margin-left:400px; margin-top:40px;">
-    <%= f.submit "保存する", class: "edit_user_button" %>
-     <%= link_to "退会する", users_withdraw_path(@user.id), class: "withdraw_button" %>
+    <%= f.submit "保存する" %>
+     <%= link_to "退会する", users_withdraw_path(@user.id), style: "margin-left:100px; text-decoration: none;"  %>
   </div>
   
 <% end %>
